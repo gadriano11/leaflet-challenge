@@ -1,8 +1,8 @@
 // Creating the map object
 let myMap = L.map("map", {
-    center: [0, 0], // Center coordinates
-    zoom: 2, // Initial zoom level
-    maxBounds: L.latLngBounds([90, -180], [-90, 180]), // Set the max bounds to cover the whole map
+    center: [-37.8136, 144.9631], // Center coordinates
+    zoom: 3, // Initial zoom level
+    maxBounds: L.latLngBounds([-90, -180], [90, 180]), // Set the max bounds to cover the whole map
 });
 
 // Adding the tile layer

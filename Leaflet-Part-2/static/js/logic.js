@@ -1,19 +1,31 @@
 // Creating the map object
 let myMap = L.map("map", {
-    center: [0, 0], // Center coordinates
-    zoom: 2, // Initial zoom level
-    maxBounds: L.latLngBounds([90, -180], [-90, 180]), // Set the max bounds to cover the whole map
+    center: [-37.8136, 144.9631], // Center coordinates
+    zoom: 3, // Initial zoom level
+    maxBounds: L.latLngBounds([-90, -180], [90, 180]), // Set the max bounds to cover the whole map
 });
 
 // Adding base maps
 let streetMap = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    minZoom: 0,
+    maxZoom: 20,
 });
 
 // Google Streets as a base map
-let googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
-    maxZoom: 20,
-    subdomains:['mt0','mt1','mt2','mt3']
+// May be used as alternative but keep in mind that its web mercator is different hence the css would need to be altered.
+// let googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
+//     maxZoom: 20,
+//     subdomains:['mt0','mt1','mt2','mt3']
+// });
+
+// Use Jawg maps as alternative base map
+let jawgMap = L.tileLayer('https://{s}.tile.jawg.io/jawg-terrain/{z}/{x}/{y}{r}.png?access-token={accessToken}', {
+	attribution: '<a href="http://jawg.io" title="Tiles Courtesy of Jawg Maps" target="_blank">&copy; <b>Jawg</b>Maps</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+	minZoom: 0,
+	maxZoom: 20,
+	subdomains: 'abcd',
+	accessToken: 'YFu6bfia0zScJPcxS9nZDym7FhfdNdd9qpJfsfuO7FZUdGBghN9gDYZLwmWXrc2A'
 });
 
 // Store the API query variables.
@@ -109,7 +121,7 @@ d3.json(earthQuakeURL).then(function (earthquakeData) {
         // Create a base maps object
         let baseMaps = {
             "Street Map": streetMap,
-            "Google Streets": googleStreets, // Add Google Streets as a base map
+            "Terrain Map": jawgMap, // Add Google Streets as a base map
         };
 
         // Add base maps and overlays to the map
