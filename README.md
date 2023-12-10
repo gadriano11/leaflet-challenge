@@ -7,6 +7,10 @@ The USGS is interested in building a new set of tools that will allow them to vi
 
 ## Part 1: Create the Earthquake Visualisation
 
+<p align="center">
+  <img src="./Images/sample output.jpg" alt="Part One sample out"/>
+</p>
+
 Your first task is to visualise an earthquake dataset. Complete the following steps:
 
 1. Get your dataset. To do so, follow these steps:
@@ -14,12 +18,15 @@ Your first task is to visualise an earthquake dataset. Complete the following st
     - The USGS provides earthquake data in a number of different formats, updated every 5 minutes. Visit the USGS GeoJSON FeedLinks to an external site. page and choose a dataset to visualise. The following image is an example screenshot of what appears when you visit this link:
   
 
-IMAGE HERE
+<p align="center">
+  <img src="./Images/usgs.jpg" alt="USGS"/>
+</p>
 
 - When you click a dataset (such as "All Earthquakes from the Past 7 Days"), you will be given a JSON representation of that data. Use the URL of this JSON to pull in the data for the visualisation. The following image is a sampling of earthquake data in JSON format:
 
-IMAGE HERE
-
+<p align="center">
+  <img src="./Images/json.jpg" alt="json"/>
+</p>
 
 2. Import and visualise the data by doing the following:
 
@@ -37,7 +44,9 @@ This part is completely optional; you can complete this part as a way to challen
 
 The following image is an example screenshot of what you should produce:
 
-IMAGE HERE
+<p align="center">
+  <img src="./Images/Part2 sample.jpg" alt="part2 sample"/>
+</p>
 
 Perform the following tasks:
 - Plot the tectonic plates dataset on the map in addition to the earthquakes.
